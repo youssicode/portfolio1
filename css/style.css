@@ -31,7 +31,7 @@ section {
 }
 #home {
   height: 100vh;
-  background: url("images/canvas.png") center/cover;
+  background: url("../images/canvas.png") center/cover;
 }
 #home h1 {
   font-size: 2.7rem;
