@@ -760,3 +760,46 @@ footer h4 {
   }
   /** End Responsive Nav-Bar */
 }
+@media screen and (max-width: 350px) {
+  #home h1 {
+    font-size: 1.5rem;
+  }
+  .about-ftr1,
+  .about-ftr2 {
+    min-width: 10rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .who-is {
+    width: 100%;
+  }
+  .skills {
+    min-width: 100%;
+  }
+  .my-photo {
+    width: 80%;
+  }
+  .my-card {
+    width: 100%;
+  }
+  .percentage {
+    font-size: 0.8rem;
+  }
+  .projects-grid {
+    width: 100%;
+  }
+  .project {
+    width: 95%;
+    height: 75vw;
+  }
+  .social-cntr div {
+    margin: 0 2vw;
+  }
+  footer h4 {
+    font-size: 0.7rem;
+  }
+}
