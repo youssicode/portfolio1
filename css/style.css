@@ -1,3 +1,12 @@
+:root {
+  --first-color: whitesmoke;
+  --sd-color: #04c2c9;
+  --thrd-color: #e31b6d;
+  --frth-color: #1b242f;
+  --ffth-color: #444649;
+  --sxth-color: #616161;
+  --svth-color: #252934;
+}
 * {
   padding: 0;
   margin: 0;
@@ -22,31 +31,28 @@ section {
 }
 #home {
   height: 100vh;
-  background-image: url("/images/canvas.png");
-  background-position: center;
-  background-size: cover;
+  background: url("/images/canvas.png") center/cover;
 }
 #home h1 {
   font-size: 2.7rem;
-  color: white;
+  color: var(--first-color);
   text-align: center;
   font-weight: 400;
 }
 #home span {
-  color: #e31b6d;
+  color: var(--thrd-color);
 }
 #home button {
   font-size: 1.3rem;
   background-color: transparent;
-  color: whitesmoke;
+  color: var(--first-color);
   padding: 11px 22px;
   margin-top: 1.1rem;
-  font-family: "Raleway", "sans-serif";
   font-weight: 500;
-  border: 2px solid white;
+  border: 2px solid var(--first-color);
   transition: 0.5s;
 }
-.fa-arrow-right {
+#home .fa-arrow-right {
   font-size: 1rem;
   margin-left: 0.7rem;
   transition: 0.3s;
@@ -54,22 +60,20 @@ section {
 .social-cntr div:hover,
 #home button:hover,
 #contact .sub-btn:hover {
-  background-color: rgb(98, 218, 208);
-  border: 2px solid rgb(98, 218, 208);
+  background-color: var(--sd-color);
+  border: 2px solid var(--sd-color);
 }
-.section-home button:hover i {
+#home button:hover i {
   transform: rotate(90deg);
 }
-
 /* End Home section  */
 
 /** Start Responsive Nav-Bar */
-.container {
+.nav-container {
   width: 100%;
   height: 50px;
-  background-color: #1b242f;
-  border-bottom: 3px solid rgb(98, 218, 208);
-  position: relative;
+  background-color: var(--frth-color);
+  border-bottom: 3px solid var(--sd-color);
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -90,11 +94,11 @@ nav ul li,
 nav ul li a,
 #portfolio ul li a {
   text-decoration: none;
-  color: whitesmoke;
+  color: var(--first-color);
   transition: color 0.5s ease;
 }
 nav ul li a:hover {
-  color: #e31b6d;
+  color: var(--thrd-color);
 }
 #toggle-check {
   float: right;
@@ -103,80 +107,45 @@ nav ul li a:hover {
 .nav-toggler {
   width: 50px;
   height: 47px;
-  background-color: #1b242f;
+  background-color: var(--frth-color);
   float: right;
   display: none;
 }
-
-.nav-toggler span {
+.nav-toggler span,
+.nav-toggler span::before,
+.nav-toggler span::after {
   width: 35px;
   height: 4px;
-  background-color: whitesmoke;
+  background-color: var(--first-color);
   border-radius: 3px;
+}
+.nav-toggler span::after,
+.nav-toggler span::before {
+  position: absolute;
+  content: "";
+}
+.nav-toggler span {
   position: relative;
 }
 .nav-toggler span::before {
-  content: "";
-  position: absolute;
   top: 10px;
-  width: 35px;
-  height: 4px;
-  background-color: whitesmoke;
-  border-radius: 3px;
 }
 .nav-toggler span::after {
-  content: "";
-  position: absolute;
   top: -10px;
-  width: 35px;
-  height: 4px;
-  background-color: whitesmoke;
-  border-radius: 3px;
 }
 /** End Responsive Nav-Bar */
-
-/* nav {
-  width: 100%;
-  background-color: #1b242f;
-  border-bottom: 3px solid rgb(98, 218, 208);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-nav ul {
-  padding: 6px 0;
-  margin-left: 15vw;
-}
-nav ul li,
-#portfolio ul li {
-  display: inline-block;
-  margin-left: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 400;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-nav ul li a,
-#portfolio ul li a {
-  text-decoration: none;
-  color: whitesmoke;
-  transition: all 0.5s 0.2s;
-}
-nav ul li a:hover {
-  color: #e31b6d;
-} */
 
 /** Start of Section About */
 h2 {
   font-size: 2.3rem;
-  color: #444649;
+  color: var(--ffth-color);
   font-weight: 700;
   margin-bottom: 4rem;
 }
 h2::after {
   display: block;
   content: "";
-  background-color: #444649;
+  background-color: var(--ffth-color);
   height: 0.25rem;
   width: 4.3rem;
   margin: 10px auto;
@@ -195,42 +164,34 @@ h2::after {
 }
 .hex-holder i {
   z-index: 5;
-  color: whitesmoke;
+  color: var(--first-color);
   font-size: 2.5rem;
 }
-.hexagon {
+.hexagon,
+.hexagon::after,
+.hexagon::before {
   position: absolute;
-  text-align: center;
-  top: 0;
-  left: 20%;
-  background-color: #04c2c9;
-  width: calc(100% * 0.57735);
+  background-color: var(--sd-color);
   height: inherit;
-  /* for centring the icons -flex-center- */
 }
-.hexagon::after {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hexagon::after,
+.hexagon::before {
   content: "";
   display: inline-block;
-  background-color: #04c2c9;
   width: 100%;
-  height: inherit;
+  left: 0;
+}
+.hexagon {
+  left: 20%;
+  width: calc(100% * 0.57735);
+  /* class="flex-center" for centring the icons  */
+}
+.hexagon::after {
   transform: rotate(60deg);
 }
 .hexagon::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  display: inline-block;
-  background-color: #04c2c9;
-  width: 100%;
-  height: inherit;
   transform: rotate(-60deg);
 }
-
 .about-flex {
   width: 87%;
   margin-bottom: 4rem;
@@ -254,7 +215,7 @@ h2::after {
 .about-card,
 .my-card {
   text-align: center;
-  color: #616161;
+  color: var(--sxth-color);
   padding: 0 0.4rem;
 }
 h3 {
@@ -282,7 +243,6 @@ h3 {
   z-index: 6;
   opacity: 0.7;
 }
-
 .my-card .hex-holder {
   width: 250px;
   height: 250px;
@@ -299,7 +259,7 @@ h3 {
 }
 .my-card span,
 .my-card a {
-  color: #04c2c9;
+  color: var(--sd-color);
   font-weight: 500;
   text-decoration: none;
 }
@@ -319,9 +279,9 @@ h3 {
 .skill-name {
   width: 7rem;
   height: 100%;
-  background-color: #04c2c9;
+  background-color: var(--sd-color);
   line-height: 1.9rem;
-  color: whitesmoke;
+  color: var(--first-color);
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
@@ -371,13 +331,13 @@ h3 {
   margin-bottom: 1rem;
 }
 #portfolio ul li a {
-  color: #616161;
+  color: var(--sxth-color);
   padding: 0.3rem 2vw;
 }
 #portfolio ul li:first-child a,
 #portfolio ul li:hover a {
-  color: whitesmoke;
-  background-color: #e31b6d;
+  color: var(--first-color);
+  background-color: var(--thrd-color);
 }
 
 .project {
@@ -428,35 +388,37 @@ h3 {
 }
 .flip span {
   font-size: 1rem;
-  color: #e31b6d;
+  color: var(--thrd-color);
 }
 .flip button {
   font-size: 1rem;
   padding: 0.7rem 1.4rem;
-  border: 2px solid #e31b6d;
+  border: 2px solid var(--thrd-color);
   background-color: transparent;
 }
 .flip button:hover {
-  background-color: #e31b6d;
-  color: whitesmoke;
+  background-color: var(--thrd-color);
+  color: var(--first-color);
 }
-.flip div {
+.flip div,
+.flip button {
   position: absolute;
-  top: 0;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.5s;
   opacity: 0;
+}
+.flip div {
+  top: 0;
   text-align: center;
 }
 .flip button {
-  transition: all 0.5s;
-  position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
   cursor: pointer;
+}
+.project:hover .flip {
+  visibility: visible;
+  opacity: 1;
 }
 .project:hover .flip div {
   top: 22%;
@@ -464,10 +426,6 @@ h3 {
 }
 .project:hover .flip button {
   bottom: 22%;
-  opacity: 1;
-}
-.project:hover .flip {
-  visibility: visible;
   opacity: 1;
 }
 
@@ -499,7 +457,7 @@ h3 {
   max-width: 1170px;
   flex-wrap: wrap;
 }
-/* That's all !! */
+/* withe class="flex-center" That's all !! */
 /** End-Projects section using Flex-Box Layout */
 
 /** Start Blog section */
@@ -509,7 +467,7 @@ h3 {
 .blog-card {
   width: 16.875rem;
   height: max-content;
-  color: #616161;
+  color: var(--sxth-color);
   margin: 1.2rem 0.5rem;
   transition: opacity 0.3s;
 }
@@ -540,7 +498,7 @@ h3 {
   width: 25%;
   height: 3px;
   margin-top: 1.3rem;
-  background-color: #04c2c9;
+  background-color: var(--sd-color);
 }
 .blog-card p {
   font-size: 0.9rem;
@@ -570,25 +528,25 @@ h3 {
   opacity: 1 !important;
 } */
 #contact {
-  background: #252934 url(/images/contact-bg.jpg) no-repeat top center;
+  background: var(--svth-color) url(/images/contact-bg.jpg) no-repeat top center;
   background-size: contain;
   min-width: 100%;
   padding-top: 10rem;
   position: relative;
 }
 #contact h2 {
-  color: #fff;
+  color: var(--first-color);
   margin-bottom: 0;
 }
 #contact h2::after {
-  background-color: #fff;
+  background-color: var(--first-color);
 }
 .contact-container {
   width: 32rem;
   max-width: 32rem;
 }
 #contact h4 {
-  color: #04c2c9;
+  color: var(--sd-color);
   margin: 3rem auto;
   text-align: center;
 }
@@ -596,16 +554,13 @@ h3 {
 .email,
 .message {
   width: 100%;
-  background-color: #1e242c;
+  background-color: var(--frth-color);
   border: none;
-  color: whitesmoke;
+  color: var(--first-color);
   font-size: 1rem;
   padding: 0.6rem;
   outline: none;
 }
-/* .message::placeholder {
-  padding-bottom: 20rem;
-} */
 .name,
 .email {
   height: 42px;
@@ -624,29 +579,28 @@ form .sub-btn {
   font-size: 1rem;
   font-weight: 500;
   line-height: 2.5rem;
-  align-self: flex-end;
   padding: 0 2rem;
-  background-color: #1e242c;
-  border: 2px solid whitesmoke;
-  color: whitesmoke;
+  background-color: var(--frth-color);
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
   transition: 0.5s;
   float: right;
 }
 .up-btn {
   width: 3.48rem;
   height: 3.125rem;
-  background-color: #e31b6dde;
+  background-color: var(--thrd-color);
   font-weight: 600;
   transform: rotate(-90deg) translateY(-50%);
   text-align: center;
   line-height: 2.69rem;
-  color: whitesmoke;
+  color: var(--first-color);
   font-size: x-large;
   position: absolute;
   bottom: -1.375rem;
 }
 footer {
-  background-color: #1e242c;
+  background-color: var(--frth-color);
   padding: 4rem 0;
 }
 
@@ -659,9 +613,9 @@ footer {
   flex-shrink: 0;
   width: 3.5rem;
   height: 3.5rem;
-  background-color: #252934;
+  background-color: var(--svth-color);
   margin: 0 1rem;
-  color: #fff;
+  color: var(--first-color);
   font-size: 1.2rem;
   transition: all 0.5s ease;
   position: relative;
@@ -692,13 +646,12 @@ footer {
 }
 footer h4 {
   text-align: center;
-  color: #616161;
+  color: var(--sxth-color);
   font-size: 0.9rem;
 }
 .copyright {
   color: #8b1d4b;
 }
-
 /** MEDIA QUERIES */
 @media screen and (max-width: 1270px) and (min-width: 440px) {
   .blog-card {
@@ -742,7 +695,6 @@ footer h4 {
     padding-top: 7rem;
   }
 }
-
 @media screen and (max-width: 975px) {
   .skills {
     width: 90%;
@@ -753,7 +705,6 @@ footer h4 {
     margin-bottom: 2.5rem;
   }
 }
-
 @media screen and (max-width: 700px) {
   #home h1 {
     font-size: 2rem;
@@ -782,22 +733,20 @@ footer h4 {
     top: 50px;
     width: 100%;
     height: 200px;
-    background-color: rgb(70, 65, 64);
+    background-color: var(--ffth-color);
     display: none;
   }
-  .container {
+  .nav-container {
     overflow: visible;
   }
   nav ul li {
     display: block;
     margin-left: 1.3rem;
   }
-
   #toggle-check:checked ~ nav {
     display: block;
     margin-left: 0;
   }
-
   #toggle-check:checked ~ .nav-toggler span {
     background-color: transparent;
   }
